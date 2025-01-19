@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Form</title>
+</head>
+<body>
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+        <label for="order_date">申込日:</label>
+        <input type="date" id="order_date" name="order_date" required><br><br>
+        
+        <label for="delivery_date">配達日:</label>
+        <input type="date" id="delivery_date" name="delivery_date" required><br><br>
+        
+        <label for="school_name">学校名:</label>
+        <input type="text" id="school_name" name="school_name" required><br><br>
+        
+        <label for="product_name">商品名:</label>
+        <input type="text" id="product_name" name="product_name" required><br><br>
+        
+        <label for="print_design_1">プリントデザイン前:</label>
+        <input type="file" id="print_design_1" name="print_design_1" accept="image/*"><br><br>
+        
+        <!-- 他のフィールドを同様に追加 -->
+        
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html>
