@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+ï»¿from flask import Flask, request, jsonify
 import os
 
 app = Flask(__name__)
@@ -12,15 +12,15 @@ def submit_form():
     data = request.form.to_dict()
     files = request.files
     
-    # ‰æ‘œƒtƒ@ƒCƒ‹‚Ì•Û‘¶
+    # ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿å­˜
     for key in files:
         file = files[key]
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-        data[key] = file.filename  # ƒtƒ@ƒCƒ‹–¼‚ğƒf[ƒ^‚É’Ç‰Á
+        data[key] = file.filename  # ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ãƒ‡ãƒ¼ã‚¿ã«è¿½åŠ 
     
-    # ‚±‚±‚Åƒf[ƒ^‚ğ•Û‘¶ (—á: ƒf[ƒ^ƒx[ƒX‚Ü‚½‚Íƒtƒ@ƒCƒ‹)
-    print(data)  # Šm”F—p
-    return jsonify({"message": "ƒtƒH[ƒ€‚ª‘—M‚³‚ê‚Ü‚µ‚½", "data": data}), 200
+    # ã“ã“ã§ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ (ä¾‹: ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã¾ãŸã¯ãƒ•ã‚¡ã‚¤ãƒ«)
+    print(data)  # ç¢ºèªç”¨
+    return jsonify({"message": "ãƒ•ã‚©ãƒ¼ãƒ ãŒé€ä¿¡ã•ã‚Œã¾ã—ãŸ", "data": data}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
